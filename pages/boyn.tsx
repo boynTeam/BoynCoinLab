@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 
-export const BoynPage = () => {
+const BoynPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.topbar}>
@@ -37,3 +37,5 @@ export const BoynPage = () => {
     </div>
   );
 };
+
+export default BoynPage;
