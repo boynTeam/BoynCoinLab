@@ -1,8 +1,12 @@
+import { ExternalProvider } from "@ethersproject/providers";
 import { ethers } from "ethers";
 import { useEffect } from "react";
 export default function () {
   const init = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    // @ts-nocheck
+    const provider = new ethers.providers.Web3Provider(
+      global?.window?.ethereum as ExternalProvider
+    );
     provider.getNetwork().then((net) => {
       console.log(net);
     });
