@@ -1,23 +1,28 @@
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 const BoynPage = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.topbar}>
+      <div className="grid grid-cols-12 gap-12 pt-2">
         <p>🧘‍♂️ AboutMe</p>
         <p>🧘‍♂️ Posts</p>
+        <p className="col-span-2 col-end-13"> Connect Wallet</p>
+        {/* <div className="flex-row-reverse">
+          <p className="px-2"> Connect Wallet</p>
+        </div> */}
       </div>
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Boyn Coin Lab!</h1>
+        <h1 className="text-5xl font-bold">Welcome to Boyn Coin Lab!</h1>
         <div>
-          <h2 className={styles.description}>⬇️ What you can find here ⬇️</h2>
+          <h2 className="underline">⬇️ What you can find here ⬇️</h2>
         </div>
 
         <div className={styles.grid}>
-          <a href="" className={styles.card}>
+          <Link href="/faucet" className={styles.card}>
             <h2>Boyn Coin Faucet&rarr;</h2>
             <p>A faucet about my own ERC20 coins</p>
-          </a>
+          </Link>
 
           <a href="" className={styles.card}>
             <h2>ERC721 NFT Collections &rarr;</h2>
