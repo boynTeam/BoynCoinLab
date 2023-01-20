@@ -3,6 +3,8 @@ import { InjectedConnector } from "wagmi/connectors/injected";
 import { useSignMessage } from "wagmi";
 import { verifyMessage } from "ethers/lib/utils";
 import { useEffect, useRef, useState } from "react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import styles from "../styles/Home.module.css";
 const Wallet = () => {
   const { address, isConnected } = useAccount();
   const { connect } = useConnect({
@@ -44,7 +46,7 @@ const Wallet = () => {
     signMessage({ message: "Welcome to boyn coin lab" });
   }, [address]);
 
-  return isConnected ? renderConnect() : renderDisconnect();
+  return <ConnectButton accountStatus="address" chainStatus="name" />;
 };
 
 export default Wallet;
